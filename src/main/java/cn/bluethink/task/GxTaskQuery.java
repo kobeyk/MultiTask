@@ -9,9 +9,9 @@ import java.util.concurrent.Callable;
 /**
  * <p>任务查询线程</p>
  *
- * @author yukun24@126.com
+ * @author Appleyk
  * @version V.1.0.1
- * @company 苏州中科蓝迪
+ * @blob https://blog.csdn.net/Appleyk
  * @date created on 下午 2:09 2019-10-25
  */
 public class GxTaskQuery implements Callable<List<GxTask>> {

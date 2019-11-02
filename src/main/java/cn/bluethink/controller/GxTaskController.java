@@ -3,7 +3,6 @@ package cn.bluethink.controller;
 import cn.bluethink.model.GxTask;
 import cn.bluethink.service.GxTaskService;
 import cn.bluethink.task.GxTaskQuery;
-import cn.bluethink.utils.GxSpringContextUtils;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +20,9 @@ import java.util.concurrent.*;
 /**
  * <p>任务控制器</p>
  *
- * @author yukun24@126.com
+ * @author Appleyk
  * @version V.1.0.1
- * @company 苏州中科蓝迪
+ * @blob https://blog.csdn.net/Appleyk
  * @date created on 下午 2:18 2019-10-25
  */
 @CrossOrigin
@@ -40,12 +39,11 @@ public class GxTaskController {
     @GetMapping("/query")
     public ResponseEntity query(){
 
-        // 模拟100个id
+        // 模拟10000个id
         List<Long> ids = new ArrayList<>();
         for (long i = 0; i <10000 ; i++) {
             ids.add(i);
         }
-
 
         // 将ids按多少个进行拆分
         List<List<Long>> parts = Lists.partition(ids, 50);
@@ -81,6 +79,16 @@ public class GxTaskController {
             }
         }
         return ResponseEntity.ok(allTasks);
+    }
+
+    @GetMapping("/queryNot")
+    public ResponseEntity queryNot(){
+        // 模拟10000个id
+        List<Long> ids = new ArrayList<>();
+        for (long i = 0; i <10000 ; i++) {
+            ids.add(i);
+        }
+        return ResponseEntity.ok(taskService.queryByIds(ids));
     }
 
 }

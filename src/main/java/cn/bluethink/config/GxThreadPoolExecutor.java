@@ -10,9 +10,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * <p>线程池</p>
  *
- * @author yukun24@126.com
+ * @author Appleyk
  * @version V.1.0.1
- * @company 苏州中科蓝迪公司所有(c)2016-2021
+ * @blob https://blog.csdn.net/Appleyk
  * @date created on 下午 3:26 2019-7-25
  */
 @Configuration
@@ -50,7 +50,7 @@ public class GxThreadPoolExecutor {
         executor.setKeepAliveSeconds(keepAlive);
         //加载
         executor.initialize();
-        System.err.println("线程池初始化......");
+        System.out.println("线程池初始化......");
         return executor;
     }
 
